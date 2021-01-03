@@ -295,6 +295,8 @@ public class FileGalleryAdapter extends MultiSelectionAdapter<FileGalleryAdapter
 
         ViewHolder(View v) {
             super(v);
+            openCamera = v.findViewById(R.id.file_open_camera);
+            openVideoCamera = v.findViewById(R.id.file_open_video_camera);
             fileThumbnail = v.findViewById(R.id.file_thumbnail);
             fileDuration = v.findViewById(R.id.file_duration);
             fileName = v.findViewById(R.id.file_name);
