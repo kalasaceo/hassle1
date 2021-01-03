@@ -1,24 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            Properties properties = new Properties()
-            File propertiesFile = project.rootProject.file('app/gradle.properties')
-            if (propertiesFile.exists()) {
-                properties.load(propertiesFile.newDataInputStream())
-                storeFile file(properties.getProperty('KEYSTORE_FILE'))
-                keyAlias properties.getProperty('KEY_ALIAS')
-                storePassword properties.getProperty('KEYSTORE_PASSWORD')
-                keyPassword properties.getProperty('KEY_PASSWORD')
-            }
-        }
-    }
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.jaiselrahman.filepickersample"
-        minSdkVersion 14
-        targetSdkVersion 29
+        minSdkVersion 21
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -27,7 +14,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }
